@@ -332,10 +332,27 @@ document.addEventListener(
                         .username
                 );
 
-                // Fetch user data with better error handling
+                // Set up 3-second timeout to show fallback quickly
+                const timeoutId =
+                    setTimeout(
+                        () => {
+                            console.warn(
+                                "⏰ API timeout after 3 seconds, showing fallback"
+                            );
+                            updateProjectsFallback();
+                            updateSkillsFallback();
+                            updateAboutSectionFallback();
+                        },
+                        3000
+                    );
+
+                // Fetch user data with better error handling and timeout
                 const userResponse =
                     await fetch(
-                        `https://api.github.com/users/${config.github.username}`
+                        `https://api.github.com/users/${config.github.username}`,
+                        {
+                            timeout: 5000,
+                        }
                     );
 
                 if (
@@ -445,7 +462,13 @@ document.addEventListener(
                 console.log(
                     "🎉 GitHub data loaded successfully!"
                 );
+                clearTimeout(
+                    timeoutId
+                ); // Clear timeout on success
             } catch (error) {
+                clearTimeout(
+                    timeoutId
+                ); // Clear timeout on error
                 console.error(
                     "❌ GitHub API error:",
                     error.message
