@@ -37,7 +37,7 @@ document.addEventListener(
             {
                 github: {
                     username:
-                        "EthanPeters96", // Updated with correct casing
+                        "EthanPeters96", // Your actual GitHub username
                 },
                 typingTexts:
                     [
@@ -326,27 +326,55 @@ document.addEventListener(
         async function fetchGitHubData() {
             try {
                 console.log(
-                    "Fetching GitHub data for:",
+                    "🔍 Fetching GitHub data for:",
                     config
                         .github
                         .username
                 );
 
-                // Fetch user data
+                // Fetch user data with better error handling
                 const userResponse =
                     await fetch(
                         `https://api.github.com/users/${config.github.username}`
                     );
+
+                if (
+                    !userResponse.ok
+                ) {
+                    throw new Error(
+                        `GitHub user API failed: ${userResponse.status} ${userResponse.statusText}`
+                    );
+                }
+
                 const userData =
                     await userResponse.json();
+                console.log(
+                    "✅ User data fetched:",
+                    userData.login,
+                    `- ${userData.public_repos} public repos`
+                );
 
                 // Fetch repositories data
                 const reposResponse =
                     await fetch(
                         `https://api.github.com/users/${config.github.username}/repos?per_page=100&sort=updated`
                     );
+
+                if (
+                    !reposResponse.ok
+                ) {
+                    throw new Error(
+                        `GitHub repos API failed: ${reposResponse.status} ${reposResponse.statusText}`
+                    );
+                }
+
                 const reposData =
                     await reposResponse.json();
+                console.log(
+                    "✅ Repositories fetched:",
+                    reposData.length,
+                    "total repos"
+                );
 
                 // Filter out forks and get only user's repositories
                 const userRepos =
@@ -356,6 +384,33 @@ document.addEventListener(
                         ) =>
                             !repo.fork
                     );
+                console.log(
+                    "✅ User repos (no forks):",
+                    userRepos.length,
+                    "repos"
+                );
+                console.log(
+                    "📋 Repository names:",
+                    userRepos.map(
+                        (
+                            r
+                        ) =>
+                            r.name
+                    )
+                );
+
+                // Check if user has any public repos
+                if (
+                    userRepos.length ===
+                    0
+                ) {
+                    console.warn(
+                        "⚠️ No public repositories found, using fallback"
+                    );
+                    throw new Error(
+                        "No public repositories found"
+                    );
+                }
 
                 // Fetch language statistics for each repository
                 const languageStats =
@@ -388,13 +443,17 @@ document.addEventListener(
                 );
 
                 console.log(
-                    "GitHub data loaded successfully"
+                    "🎉 GitHub data loaded successfully!"
                 );
             } catch (error) {
-                console.warn(
-                    "GitHub API error:",
-                    error
+                console.error(
+                    "❌ GitHub API error:",
+                    error.message
                 );
+                console.log(
+                    "🔄 Loading fallback data..."
+                );
+
                 // Fallback data if API fails
                 updateGitHubStats(
                     {
@@ -782,39 +841,53 @@ document.addEventListener(
                 <div class="project-card fade-in">
                     <div class="project-image">
                         <div class="project-overlay">
-                            <a href="https://github.com/EthanPeters96" target="_blank" rel="noopener" class="project-link">
-                                <i class="fab fa-github"></i> View Code
-                            </a>
+                            <div class="overlay-content">
+                                <i class="fas fa-exclamation-triangle" style="color: #f39c12; font-size: 2rem; margin-bottom: 1rem;"></i>
+                                <p style="color: white; text-align: center; margin: 0;">GitHub API Unavailable</p>
+                            </div>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Portfolio Website</h3>
-                        <p class="project-description">A modern, responsive portfolio website with dark theme and colorful highlights.</p>
+                        <h3 class="project-title">GitHub Projects</h3>
+                        <p class="project-description">
+                            Unable to load projects from GitHub API (likely due to rate limiting). 
+                            Please visit my GitHub profile directly to view my repositories and projects.
+                        </p>
                         <div class="project-tags">
-                            <span class="project-tag">JavaScript</span>
-                            <span class="project-tag">HTML/CSS</span>
-                            <span class="project-tag">Portfolio</span>
+                            <span class="project-tag">GitHub</span>
+                            <span class="project-tag">API Rate Limited</span>
+                        </div>
+                        <div style="margin-top: 1rem;">
+                            <a href="https://github.com/${config.github.username}" target="_blank" rel="noopener" class="btn btn-primary">
+                                <i class="fab fa-github"></i> View GitHub Profile
+                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="project-card fade-in">
                     <div class="project-image">
                         <div class="project-overlay">
-                            <a href="https://github.com/EthanPeters96" target="_blank" rel="noopener" class="project-link">
-                                <i class="fab fa-github"></i> View Profile
-                            </a>
+                            <div class="overlay-content">
+                                <i class="fas fa-globe" style="color: #3498db; font-size: 2rem; margin-bottom: 1rem;"></i>
+                                <p style="color: white; text-align: center; margin: 0;">Portfolio Website</p>
+                            </div>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">More Projects</h3>
-                        <p class="project-description">Visit my GitHub profile to see all my projects and contributions.</p>
+                        <h3 class="project-title">This Portfolio</h3>
+                        <p class="project-description">
+                            A modern, responsive portfolio website built with HTML, CSS, and JavaScript. 
+                            Features dynamic GitHub integration, animated UI, and responsive design.
+                        </p>
                         <div class="project-tags">
-                            <span class="project-tag">GitHub</span>
-                            <span class="project-tag">Open Source</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">HTML/CSS</span>
+                            <span class="project-tag">Portfolio</span>
+                            <span class="project-tag">Responsive</span>
                         </div>
-                    </div>
-                </div>
-            `;
+                                          </div>
+                  </div>
+              `;
         }
 
         // Format date for display
