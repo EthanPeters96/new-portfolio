@@ -324,6 +324,20 @@ document.addEventListener(
 
         // GitHub data fetching with enhanced language analysis
         async function fetchGitHubData() {
+            // Set up 3-second timeout to show fallback quickly (declare outside try/catch)
+            let timeoutId =
+                setTimeout(
+                    () => {
+                        console.warn(
+                            "⏰ API timeout after 3 seconds, showing fallback"
+                        );
+                        updateProjectsFallback();
+                        updateSkillsFallback();
+                        updateAboutSectionFallback();
+                    },
+                    3000
+                );
+
             try {
                 console.log(
                     "🔍 Fetching GitHub data for:",
@@ -331,20 +345,6 @@ document.addEventListener(
                         .github
                         .username
                 );
-
-                // Set up 3-second timeout to show fallback quickly
-                const timeoutId =
-                    setTimeout(
-                        () => {
-                            console.warn(
-                                "⏰ API timeout after 3 seconds, showing fallback"
-                            );
-                            updateProjectsFallback();
-                            updateSkillsFallback();
-                            updateAboutSectionFallback();
-                        },
-                        3000
-                    );
 
                 // Fetch user data with better error handling and timeout
                 const userResponse =
