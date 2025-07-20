@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethan Peters - Portfolio</title>
+
+    <!-- External stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">Portfolio</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="fade-in">
+                    <h1 class="hero-title">
+                        Hi, I'm <span
+                            style="background: linear-gradient(135deg, #6366f1, #8b5cf6); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Ethan
+                            Peters</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        <span class="typing-text typing-cursor" id="typing-text">Full Stack Developer</span>
+                    </p>
+                    <p class="hero-description">
+                        I create amazing digital experiences with modern technologies. Passionate about clean code, user
+                        experience, and innovative solutions.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="fade-in" style="text-align: center;">
+                    <div class="profile-card">
+                        <div class="profile-image">
+                            <img src="https://avatars.githubusercontent.com/u/171283062?v=4" alt="Ethan Peters"
+                                id="profile-img">
+                        </div>
+                        <div class="social-links">
+                            <a href="https://github.com/EthanPeters96" class="social-link" target="_blank"
+                                rel="noopener">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/ethan-peters" class="social-link" target="_blank"
+                                rel="noopener">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://twitter.com/EthanPeters96" class="social-link" target="_blank"
+                                rel="noopener">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="fade-in">
+                    <p class="about-description" id="about-description">
+                        I'm a passionate developer who loves creating innovative solutions and bringing ideas to life
+                        through code.
+                        With a strong foundation in modern web technologies, I focus on building user-centric
+                        applications that
+                        make a difference.
+                    </p>
+                    <div class="stats-grid">
+                        <div class="stat-card fade-in">
+                            <h3 class="stat-number" id="repos-count">12</h3>
+                            <p class="stat-label">GitHub Repos</p>
+                        </div>
+                        <div class="stat-card fade-in">
+                            <h3 class="stat-number" id="commits-count">234</h3>
+                            <p class="stat-label">Commits</p>
+                        </div>
+                        <div class="stat-card fade-in">
+                            <h3 class="stat-number" id="languages-count">8</h3>
+                            <p class="stat-label">Languages</p>
+                        </div>
+                        <div class="stat-card fade-in">
+                            <h3 class="stat-number" id="years-coding">2+</h3>
+                            <p class="stat-label">Years Coding</p>
+                        </div>
+                        <div class="stat-card fade-in">
+                            <h3 class="stat-number" id="top-language">JS</h3>
+                            <p class="stat-label">Top Language</p>
+                        </div>
+                        <div class="stat-card fade-in">
+                            <h3 class="stat-number" id="total-stars">⭐</h3>
+                            <p class="stat-label">GitHub Stars</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <div class="code-preview" id="code-preview">
+                        <div class="code-header">
+                            <div class="window-controls">
+                                <span class="window-control control-red"></span>
+                                <span class="window-control control-yellow"></span>
+                                <span class="window-control control-green"></span>
+                            </div>
+                            <span class="code-filename" id="code-filename">developer.js</span>
+                        </div>
+                        <div class="code-content">
+                            <pre><code id="code-content">const developer = {
+  name: "Ethan Peters",
+  skills: ["JavaScript", "React", "Node.js"],
+  passionate: true,
+  createAwesome: function() {
+    return "Building the future!";
+  }
+};</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+
+            <!-- GitHub Languages -->
+            <div class="skills-category fade-in">
+                <h3 class="category-title">
+                    <i class="fab fa-github"></i>
+                    Languages from GitHub Analytics
+                </h3>
+                <div class="github-skills">
+                    <!-- Loading placeholder -->
+                    <div class="github-skill fade-in loading-language">
+                        <div class="language-color" style="background-color: #6c757d;"></div>
+                        <span style="font-weight: 500;">Analyzing repositories...</span>
+                        <span style="opacity: 0.7;">Real-time data</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Frontend Skills -->
+            <div class="skills-category fade-in">
+                <h3 class="category-title">
+                    <i class="fas fa-laptop-code"></i>
+                    Frontend Development
+                </h3>
+                <div class="skills-grid">
+                    <!-- JavaScript -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-header">
+                            <div class="skill-icon" style="color: #f1e05a;">
+                                <i class="fab fa-js-square"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">JavaScript</h3>
+                                <p class="skill-level">Advanced</p>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar"
+                                style="background: linear-gradient(135deg, #10b981, #06d6a0); width: 90%;"></div>
+                        </div>
+                        <p class="skill-experience">ES6+, async/await, modern frameworks</p>
+                    </div>
+
+                    <!-- TypeScript -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-header">
+                            <div class="skill-icon" style="color: #2b7489;">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">TypeScript</h3>
+                                <p class="skill-level">Intermediate</p>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar"
+                                style="background: linear-gradient(135deg, #f59e0b, #fbbf24); width: 75%;"></div>
+                        </div>
+                        <p class="skill-experience">Type-safe JavaScript development</p>
+                    </div>
+
+                    <!-- React -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-header">
+                            <div class="skill-icon" style="color: #61dafb;">
+                                <i class="fab fa-react"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">React</h3>
+                                <p class="skill-level">Advanced</p>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar"
+                                style="background: linear-gradient(135deg, #10b981, #06d6a0); width: 85%;"></div>
+                        </div>
+                        <p class="skill-experience">Hooks, Context API, component architecture</p>
+                    </div>
+
+                    <!-- Vue.js -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-header">
+                            <div class="skill-icon" style="color: #4FC08D;">
+                                <i class="fab fa-vuejs"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">Vue.js</h3>
+                                <p class="skill-level">Intermediate</p>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar"
+                                style="background: linear-gradient(135deg, #f59e0b, #fbbf24); width: 70%;"></div>
+                        </div>
+                        <p class="skill-experience">Progressive framework for building UIs</p>
+                    </div>
+
+                    <!-- HTML/CSS -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-header">
+                            <div class="skill-icon" style="color: #e34c26;">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">HTML/CSS</h3>
+                                <p class="skill-level">Advanced</p>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar"
+                                style="background: linear-gradient(135deg, #10b981, #06d6a0); width: 95%;"></div>
+                        </div>
+                        <p class="skill-experience">Semantic HTML, CSS Grid, Flexbox, animations</p>
+                    </div>
+
+                    <!-- Sass/SCSS -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-header">
+                            <div class="skill-icon" style="color: #a9669c;">
+                                <i class="fab fa-sass"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">Sass/SCSS</h3>
+                                <p class="skill-level">Advanced</p>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar"
+                                style="background: linear-gradient(135deg, #10b981, #06d6a0); width: 88%;"></div>
+                        </div>
+                        <p class="skill-experience">Variables, mixins, nesting, modules</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Backend Skills -->
+            <div class="skills-category fade-in">
+                <h3 class="category-title">
+                    <i class="fas fa-server"></i>
+                    Backend Development
+                </h3>
+                <div class="skills-grid">
+                    <!-- Node.js -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-header">
+                            <div class="skill-icon" style="color: #68a063;">
+                                <i class="fab fa-node-js"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">Node.js</h3>
+                                <p class="skill-level">Advanced</p>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar"
+                                style="background: linear-gradient(135deg, #10b981, #06d6a0); width: 85%;"></div>
+                        </div>
+                        <p class="skill-experience">Express.js, REST APIs, microservices</p>
+                    </div>
+
+                    <!-- Python -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-header">
+                            <div class="skill-icon" style="color: #3572A5;">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">Python</h3>
+                                <p class="skill-level">Intermediate</p>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar"
+                                style="background: linear-gradient(135deg, #f59e0b, #fbbf24); width: 75%;"></div>
+                        </div>
+                        <p class="skill-experience">Django, FastAPI, data analysis</p>
+                    </div>
+
+                    <!-- Express.js -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-header">
+                            <div class="skill-icon" style="color: #68a063;">
+                                <i class="fas fa-route"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">Express.js</h3>
+                                <p class="skill-level">Advanced</p>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar"
+                                style="background: linear-gradient(135deg, #10b981, #06d6a0); width: 82%;"></div>
+                        </div>
+                        <p class="skill-experience">Middleware, routing, authentication</p>
+                    </div>
+
+                    <!-- GraphQL -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-header">
+                            <div class="skill-icon" style="color: #e10098;">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">GraphQL</h3>
+                                <p class="skill-level">Intermediate</p>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar"
+                                style="background: linear-gradient(135deg, #f59e0b, #fbbf24); width: 65%;"></div>
+                        </div>
+                        <p class="skill-experience">Query language for APIs</p>
+                    </div>
+
+                    <!-- REST APIs -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-header">
+                            <div class="skill-icon" style="color: #ff6b6b;">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">REST APIs</h3>
+                                <p class="skill-level">Advanced</p>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar"
+                                style="background: linear-gradient(135deg, #10b981, #06d6a0); width: 90%;"></div>
+                        </div>
+                        <p class="skill-experience">RESTful design, HTTP methods, status codes</p>
+                    </div>
+
+                    <!-- JSON -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-header">
+                            <div class="skill-icon" style="color: #f39c12;">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">JSON</h3>
+                                <p class="skill-level">Advanced</p>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar"
+                                style="background: linear-gradient(135deg, #10b981, #06d6a0); width: 95%;"></div>
+                        </div>
+                        <p class="skill-experience">Data interchange and API responses</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Database Skills -->
+            <div class="skills-category fade-in">
+                <h3 class="category-title">
+                    <i class="fas fa-database"></i>
+                    Databases & Storage
+                </h3>
+                <div class="skills-grid">
+                    <!-- MongoDB -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-header">
+                            <div class="skill-icon" style="color: #4DB33D;">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">MongoDB</h3>
+                                <p class="skill-level">Intermediate</p>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar"
+                                style="background: linear-gradient(135deg, #f59e0b, #fbbf24); width: 70%;"></div>
+                        </div>
+                        <p class="skill-experience">NoSQL, aggregation, indexing</p>
+                    </div>
+
+                    <!-- PostgreSQL -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-header">
+                            <div class="skill-icon" style="color: #336791;">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">PostgreSQL</h3>
+                                <p class="skill-level">Intermediate</p>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar"
+                                style="background: linear-gradient(135deg, #f59e0b, #fbbf24); width: 68%;"></div>
+                        </div>
+                        <p class="skill-experience">Relational database, complex queries</p>
+                    </div>
+
+                    <!-- MySQL -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-header">
+                            <div class="skill-icon" style="color: #4479A1;">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">MySQL</h3>
+                                <p class="skill-level">Intermediate</p>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar"
+                                style="background: linear-gradient(135deg, #f59e0b, #fbbf24); width: 72%;"></div>
+                        </div>
+                        <p class="skill-experience">SQL queries, database optimization</p>
+                    </div>
+
+                    <!-- Redis -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-header">
+                            <div class="skill-icon" style="color: #DC382D;">
+                                <i class="fas fa-memory"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">Redis</h3>
+                                <p class="skill-level">Beginner</p>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar"
+                                style="background: linear-gradient(135deg, #6366f1, #8b5cf6); width: 45%;"></div>
+                        </div>
+                        <p class="skill-experience">In-memory caching and data structure</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Development Tools -->
+            <div class="skills-category fade-in">
+                <h3 class="category-title">
+                    <i class="fas fa-tools"></i>
+                    Development Tools
+                </h3>
+                <div class="skills-grid">
+                    <!-- Git -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-header">
+                            <div class="skill-icon" style="color: #f34f29;">
+                                <i class="fab fa-git-alt"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">Git</h3>
+                                <p class="skill-level">Advanced</p>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar"
+                                style="background: linear-gradient(135deg, #10b981, #06d6a0); width: 90%;"></div>
+                        </div>
+                        <p class="skill-experience">Version control, branching, merging</p>
+                    </div>
+
+                    <!-- VS Code -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-header">
+                            <div class="skill-icon" style="color: #007ACC;">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">VS Code</h3>
+                                <p class="skill-level">Advanced</p>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar"
+                                style="background: linear-gradient(135deg, #10b981, #06d6a0); width: 95%;"></div>
+                        </div>
+                        <p class="skill-experience">Extensions, debugging, IntelliSense</p>
+                    </div>
+
+                    <!-- npm/yarn -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-header">
+                            <div class="skill-icon" style="color: #CB3837;">
+                                <i class="fab fa-npm"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">npm/yarn</h3>
+                                <p class="skill-level">Advanced</p>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar"
+                                style="background: linear-gradient(135deg, #10b981, #06d6a0); width: 88%;"></div>
+                        </div>
+                        <p class="skill-experience">Package management, scripts, dependencies</p>
+                    </div>
+
+                    <!-- Webpack -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-header">
+                            <div class="skill-icon" style="color: #8DD6F9;">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">Webpack</h3>
+                                <p class="skill-level">Intermediate</p>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar"
+                                style="background: linear-gradient(135deg, #f59e0b, #fbbf24); width: 65%;"></div>
+                        </div>
+                        <p class="skill-experience">Module bundling, optimization</p>
+                    </div>
+
+                    <!-- Vite -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-header">
+                            <div class="skill-icon" style="color: #646CFF;">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">Vite</h3>
+                                <p class="skill-level">Intermediate</p>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar"
+                                style="background: linear-gradient(135deg, #f59e0b, #fbbf24); width: 70%;"></div>
+                        </div>
+                        <p class="skill-experience">Fast build tool for modern web</p>
+                    </div>
+
+                    <!-- ESLint -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-header">
+                            <div class="skill-icon" style="color: #4B32C3;">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">ESLint</h3>
+                                <p class="skill-level">Advanced</p>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar"
+                                style="background: linear-gradient(135deg, #10b981, #06d6a0); width: 85%;"></div>
+                        </div>
+                        <p class="skill-experience">Code linting and quality assurance</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cloud & DevOps -->
+            <div class="skills-category fade-in">
+                <h3 class="category-title">
+                    <i class="fas fa-cloud"></i>
+                    Cloud & DevOps
+                </h3>
+                <div class="skills-grid">
+                    <!-- Docker -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-header">
+                            <div class="skill-icon" style="color: #0db7ed;">
+                                <i class="fab fa-docker"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">Docker</h3>
+                                <p class="skill-level">Intermediate</p>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar"
+                                style="background: linear-gradient(135deg, #f59e0b, #fbbf24); width: 70%;"></div>
+                        </div>
+                        <p class="skill-experience">Containerization, Docker Compose</p>
+                    </div>
+
+                    <!-- GitHub Actions -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-header">
+                            <div class="skill-icon" style="color: #2088FF;">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">GitHub Actions</h3>
+                                <p class="skill-level">Intermediate</p>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar"
+                                style="background: linear-gradient(135deg, #f59e0b, #fbbf24); width: 68%;"></div>
+                        </div>
+                        <p class="skill-experience">CI/CD workflows and automation</p>
+                    </div>
+
+                    <!-- AWS -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-header">
+                            <div class="skill-icon" style="color: #FF9900;">
+                                <i class="fab fa-aws"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">AWS</h3>
+                                <p class="skill-level">Beginner</p>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar"
+                                style="background: linear-gradient(135deg, #6366f1, #8b5cf6); width: 50%;"></div>
+                        </div>
+                        <p class="skill-experience">EC2, S3, Lambda basics</p>
+                    </div>
+
+                    <!-- Netlify -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-header">
+                            <div class="skill-icon" style="color: #00C7B7;">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">Netlify</h3>
+                                <p class="skill-level">Advanced</p>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar"
+                                style="background: linear-gradient(135deg, #10b981, #06d6a0); width: 85%;"></div>
+                        </div>
+                        <p class="skill-experience">Static site deployment and hosting</p>
+                    </div>
+
+                    <!-- Vercel -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-header">
+                            <div class="skill-icon" style="color: #000000;">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">Vercel</h3>
+                                <p class="skill-level">Advanced</p>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar"
+                                style="background: linear-gradient(135deg, #10b981, #06d6a0); width: 82%;"></div>
+                        </div>
+                        <p class="skill-experience">Frontend framework deployment</p>
+                    </div>
+
+                    <!-- Linux -->
+                    <div class="skill-card fade-in">
+                        <div class="skill-header">
+                            <div class="skill-icon" style="color: #FCC624;">
+                                <i class="fab fa-linux"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3 class="skill-name">Linux</h3>
+                                <p class="skill-level">Intermediate</p>
+                            </div>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar"
+                                style="background: linear-gradient(135deg, #f59e0b, #fbbf24); width: 72%;"></div>
+                        </div>
+                        <p class="skill-experience">Command line, scripting, server management</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid" id="projects-grid">
+                <!-- Loading placeholder -->
+                <div class="project-card fade-in loading-card">
+                    <div class="project-image">
+                        <div class="loading-spinner"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Loading Projects...</h3>
+                        <p class="project-description">Fetching real projects from GitHub...</p>
+                        <div class="project-tags">
+                            <span class="project-tag">GitHub API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info fade-in">
+                    <h3>Let's work together!</h3>
+                    <p>I'm always open to discussing new opportunities and interesting projects.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>ethanjackpeters@hotmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Your Location</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <span>github.com/EthanPeters96</span>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form fade-in" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your Message" rows="5" required
+                            class="form-textarea"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full-width">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Ethan Peters. Built with ❤️ and modern web technologies.</p>
+                <div class="social-links">
+                    <a href="https://github.com/EthanPeters96" class="social-link" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/ethan-peters" class="social-link" target="_blank" rel="noopener">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://twitter.com/EthanPeters96" class="social-link" target="_blank" rel="noopener">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
