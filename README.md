@@ -1,7 +1,7 @@
 # Modern Interactive Portfolio
 
 A clean, modern, and interactive portfolio website that automatically integrates with your GitHub repositories to showcase your projects and skills.
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/77cc92ee-64cc-4443-8f20-18fc581b66c5/deploy-status)](https://app.netlify.com/projects/ethanportfolio92/deploys)
 ## 🌟 Features
 
 -   **Modern Design**: Clean, professional layout with smooth animations
